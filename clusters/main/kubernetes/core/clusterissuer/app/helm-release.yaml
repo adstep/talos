@@ -35,7 +35,7 @@ spec:
         enabled: true
         name: "selfsigned"
       ACME:
-        - name: streamy-le-staging
+        - name: le-staging
           # Used for both logging in to the DNS provider AND ACME registration
           email: "${CLOUDFLARE_EMAIL}"
           server: 'https://acme-staging-v02.api.letsencrypt.org/directory'
@@ -43,7 +43,7 @@ spec:
           type: "cloudflare"
           # for cloudflare
           cfapitoken: "${CLOUDFLARE_TOKEN}"
-        - name: streamy-le-prod
+        - name: le-prod
           # Used for both logging in to the DNS provider AND ACME registration
           email: "${CLOUDFLARE_EMAIL}"
           server: 'https://acme-v02.api.letsencrypt.org/directory'
@@ -58,9 +58,9 @@ spec:
       replicationNamespaces: '.*'
       # replicationNamespaces: 'ix-.*'
       certificates:
-        - name: wildcard
+        - name: cluster-cert
           enabled: true
-          certificateIssuer: streamy-le-prod
+          certificateIssuer: le-prod
           hosts:
             - streamy.media
             - '*.streamy.media'

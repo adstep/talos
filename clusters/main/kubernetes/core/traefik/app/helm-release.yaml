@@ -82,7 +82,7 @@ spec:
                 namespace: traefik
           certManager:
             enabled: true
-            certificateIssuer: streamy-le-prod
+            certificateIssuer: le-prod
 
         hosts:
           - host: traefik.${BASE_DOMAIN}
