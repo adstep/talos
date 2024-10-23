@@ -40,7 +40,7 @@ spec:
         format: common
       access:
         enabled: true
-    defaultCertificate: tc-wildcard
+    defaultCertificate: wildcard
     service:
       main:
         type: ClusterIP
